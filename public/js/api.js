@@ -517,19 +517,14 @@ function showRealStatInfo() {
 }
 
 function drawChart(chartDetails, month) {
-    console.log('typeof google.visualization', typeof google.visualization);
-    console.log('google.visualization', google.visualization);
-    console.log('chartDetails', chartDetails);
-    if (chartDetails) {
-        var data = google.visualization.arrayToDataTable(chartDetails);
-        var options = {
-            title: 'Visitors for the Month of ' + month,
-            curveType: 'function',
-            legend: { position: 'top' }
-        };
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-        chart.draw(data, options);
-    }
+    var data = google.visualization.arrayToDataTable(chartDetails);
+    var options = {
+        title: 'Visitors for the Month of ' + month,
+        curveType: 'function',
+        legend: { position: 'top' }
+    };
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    chart.draw(data, options);
 }
 
 // stats
